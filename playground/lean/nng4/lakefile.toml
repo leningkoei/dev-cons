@@ -1,0 +1,13 @@
+name = "nng4"
+version = "0.1.0"
+defaultTargets = ["nng4"]
+
+[[lean_lib]]
+name = "NNG4"
+  [[require]]
+  name = "mathlib"
+  scope = "leanprover-community"
+
+[[lean_exe]]
+name = "nng4"
+root = "Main"

@@ -1,0 +1,3 @@
+-- inductive Option (α : Type) : Type where
+-- | none : Option α
+-- | some : α → Option α

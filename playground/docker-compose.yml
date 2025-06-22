@@ -1,0 +1,39 @@
+services:
+  haskell:
+    image: rust
+    container_name: playground.haskell
+    network_mode: bridge
+    stdin_open: true
+    working_dir: /root/app
+    volumes:
+      - ./haskell:/root/app
+      - haskell.vscode-server:/root/.vscode-server
+      - haskell.ghcup:/root/.ghcup
+    environment:
+      PATH: "/root/.ghcup/bin:$PATH"
+      http_proxy: http://192.168.31.2:10801
+      https_proxy: http://192.168.31.2:10801
+    command: ghci
+  lean:
+    image: rust
+    container_name: playground.lean
+    network_mode: bridge
+    stdin_open: true
+    working_dir: /root/app
+    volumes:
+      - ./lean:/root/app
+      - lean.vscode-server:/root/.vscode-server
+      - lean.elan:/root/.elan
+    environment:
+      PATH: "/root/.elan/bin:$PATH"
+      http_proxy: http://192.168.31.2:10801
+      https_proxy: http://192.168.31.2:10801
+    command: cat
+
+volumes:
+  haskell.vscode-server:
+  haskell.ghcup:
+    external: true
+  lean.vscode-server:
+  lean.elan:
+    external: true
