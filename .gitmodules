@@ -1,0 +1,3 @@
+[submodule "paiza"]
+	path = paiza
+	url = https://github.com/leningkoei/paiza.git
