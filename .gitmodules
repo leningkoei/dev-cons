@@ -1,3 +1,6 @@
 [submodule "paiza"]
 	path = paiza
 	url = https://github.com/leningkoei/paiza.git
+[submodule "playground/lean/nng4"]
+	path = playground/lean/nng4
+	url = https://github.com/leningkoei/nng4.git
