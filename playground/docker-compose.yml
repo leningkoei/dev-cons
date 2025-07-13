@@ -29,6 +29,23 @@ services:
       http_proxy: http://192.168.31.2:10801
       https_proxy: http://192.168.31.2:10801
     command: cat
+  jupyter:
+    build:
+      context: .
+      dockerfile: jupyter.dockerfile
+    image: playground.jupyter
+    container_name: playground.jupyter
+    network_mode: bridge
+    ports:
+      - 8888:8888
+    stdin_open: true
+    working_dir: /home/jovyan/work
+    volumes:
+      - ./jupyter:/home/jovyan/work
+    environment:
+      http_proxy: http://192.168.31.2:10801
+      https_proxy: http://192.168.31.2:10801
+      JUPYTER_TOKEN: "jovyan"
 
 volumes:
   haskell.vscode-server:
